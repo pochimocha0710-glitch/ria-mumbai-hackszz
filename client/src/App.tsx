@@ -62,22 +62,13 @@ function Router() {
   );
 }
 
-import { useState, useEffect } from "react";
-import { AgenticLoader } from "@/components/ui/AgenticLoader";
-
 function App() {
-  const [loading, setLoading] = useState(true);
-
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <TooltipProvider>
           <Toaster />
-          {loading ? (
-            <AgenticLoader onComplete={() => setLoading(false)} />
-          ) : (
-            <Router />
-          )}
+          <Router />
         </TooltipProvider>
       </AuthProvider>
     </QueryClientProvider>
