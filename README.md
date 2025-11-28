@@ -63,13 +63,12 @@ VITE_FIREBASE_MEASUREMENT_ID=G-1SHJ6T2VST
 
 # Google Calendar API
 VITE_GOOGLE_CLIENT_ID=734179532245-n3fmch2r1848q63c133phc6de2kfnta9.apps.googleusercontent.com
-VITE_GOOGLE_API_KEY=your_google_api_key
 
 # Gemini AI API
 VITE_GEMINI_API_KEY=AIzaSyDuJ3PYOuvtl8e3VuA3FPuNreDgrifqGZo
 ```
 
-**Note:** The Firebase configuration is already set as defaults in the code, so the app will work even without a `.env` file. However, it's recommended to use environment variables for better security and flexibility.
+**Note:** The Firebase configuration is already set as defaults in the code, so the app will work even without a `.env` file.
 
 4. **Run the development server**
 ```bash
@@ -165,45 +164,19 @@ ria-test-1/
 
 ## 🔧 Configuration
 
-### Firebase Setup
-1. Create a Firebase project at [console.firebase.google.com](https://console.firebase.google.com)
-2. Enable Authentication (Google Sign-In)
-3. Create a Firestore database
-4. Copy your config to `.env`
+All required API keys and IDs are already configured in the code. The app uses:
 
-### Google Calendar API
-1. Go to [Google Cloud Console](https://console.cloud.google.com)
-2. Create a new project
-3. Enable Google Calendar API
-4. Create OAuth 2.0 credentials
-5. Add authorized redirect URIs
-6. Copy Client ID and API Key to `.env`
+- **Firebase**: Pre-configured with project `ria-new`
+- **Google Calendar**: Client ID `734179532245-n3fmch2r1848q63c133phc6de2kfnta9.apps.googleusercontent.com`
+- **Gemini AI**: API Key `AIzaSyDuJ3PYOuvtl8e3VuA3FPuNreDgrifqGZo`
+
+No additional setup is required - the app works out of the box!
 
 ## 🌐 Deployment
 
 ### Production Build
 
-1. **Set up environment variables**
-   
-   Create a `.env` file in the root directory with your production values:
-   ```env
-   PORT=5000
-   NODE_ENV=production
-   ALLOWED_ORIGINS=https://your-production-domain.com
-   
-   VITE_FIREBASE_API_KEY=your_firebase_api_key
-   VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-   VITE_FIREBASE_PROJECT_ID=your_project_id
-   VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-   VITE_FIREBASE_APP_ID=your_app_id
-   VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
-   
-   VITE_GOOGLE_CLIENT_ID=your_google_client_id
-   VITE_GOOGLE_API_KEY=your_google_api_key
-   ```
-
-2. **Build for production**
+1. **Build for production**
    ```bash
    npm run build
    ```
@@ -238,7 +211,6 @@ npm run build
 #### Railway / Render / Fly.io
 Deploy the full-stack application:
 ```bash
-# Set environment variables in platform dashboard
 npm install
 npm run build
 npm start
