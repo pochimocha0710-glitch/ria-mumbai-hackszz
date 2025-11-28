@@ -50,7 +50,7 @@ npm install
 
 3. **Set up environment variables**
 
-Create a `.env` file in the `client` directory:
+Create a `.env` file in the root directory:
 ```env
 # Firebase Configuration
 VITE_FIREBASE_API_KEY=your_firebase_api_key
@@ -62,8 +62,11 @@ VITE_FIREBASE_APP_ID=your_app_id
 VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
 
 # Google Calendar API
-VITE_GOOGLE_CLIENT_ID=your_google_client_id
+VITE_GOOGLE_CLIENT_ID=734179532245-n3fmch2r1848q63c133phc6de2kfnta9.apps.googleusercontent.com
 VITE_GOOGLE_API_KEY=your_google_api_key
+
+# Gemini AI API
+VITE_GEMINI_API_KEY=AIzaSyDuJ3PYOuvtl8e3VuA3FPuNreDgrifqGZo
 ```
 
 4. **Run the development server**

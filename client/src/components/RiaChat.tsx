@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Bot, User as UserIcon } from 'lucide-react';
+import { getWellnessResponse } from '@/lib/gemini';
 
 export default function RiaChat() {
     const [messages, setMessages] = useState([
@@ -13,6 +14,7 @@ export default function RiaChat() {
     ]);
     const [input, setInput] = useState('');
     const [isTyping, setIsTyping] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const sendMessage = async () => {
         if (!input.trim()) return;
@@ -25,20 +27,43 @@ export default function RiaChat() {
         };
 
         setMessages(prev => [...prev, userMessage]);
+        const userInput = input;
         setInput('');
         setIsTyping(true);
+        setError(null);
 
-        // Simulate AI response (replace with actual AI API call)
-        setTimeout(() => {
+        try {
+            // Prepare conversation history for Gemini
+            const conversationHistory = messages
+                .filter(msg => msg.sender !== 'bot' || msg.id !== 1) // Exclude initial greeting
+                .map(msg => ({
+                    text: msg.text,
+                    role: msg.sender === 'user' ? 'user' : 'model' as const
+                }));
+
+            // Call Gemini API
+            const response = await getWellnessResponse(userInput, conversationHistory);
+
             const botMessage = {
                 id: Date.now() + 1,
-                text: "I understand you're looking for wellness guidance. Based on your profile, I recommend starting with some light stretching exercises. Would you like me to create a personalized routine for you?",
+                text: response,
                 sender: 'bot',
                 timestamp: new Date()
             };
             setMessages(prev => [...prev, botMessage]);
+        } catch (err) {
+            console.error('Error getting AI response:', err);
+            setError('Sorry, I encountered an error. Please try again.');
+            const errorMessage = {
+                id: Date.now() + 1,
+                text: "I'm sorry, I'm having trouble connecting right now. Please make sure the Gemini API key is configured correctly.",
+                sender: 'bot',
+                timestamp: new Date()
+            };
+            setMessages(prev => [...prev, errorMessage]);
+        } finally {
             setIsTyping(false);
-        }, 1500);
+        }
     };
 
     return (
