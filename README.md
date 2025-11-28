@@ -53,13 +53,13 @@ npm install
 Create a `.env` file in the root directory:
 ```env
 # Firebase Configuration
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+VITE_FIREBASE_API_KEY=AIzaSyAPivtbnPyUM0CZWJ2QGIr_9JnNM_-87G8
+VITE_FIREBASE_AUTH_DOMAIN=ria-new.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=ria-new
+VITE_FIREBASE_STORAGE_BUCKET=ria-new.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=64303120014
+VITE_FIREBASE_APP_ID=1:64303120014:web:7a724156580dbe5c1f13df
+VITE_FIREBASE_MEASUREMENT_ID=G-1SHJ6T2VST
 
 # Google Calendar API
 VITE_GOOGLE_CLIENT_ID=734179532245-n3fmch2r1848q63c133phc6de2kfnta9.apps.googleusercontent.com
@@ -68,6 +68,8 @@ VITE_GOOGLE_API_KEY=your_google_api_key
 # Gemini AI API
 VITE_GEMINI_API_KEY=AIzaSyDuJ3PYOuvtl8e3VuA3FPuNreDgrifqGZo
 ```
+
+**Note:** The Firebase configuration is already set as defaults in the code, so the app will work even without a `.env` file. However, it's recommended to use environment variables for better security and flexibility.
 
 4. **Run the development server**
 ```bash
