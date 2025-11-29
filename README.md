@@ -1,6 +1,33 @@
 RIA – Wellness Aware Agentic AI
 Your AI-powered posture, mood & wellness companion.
 
+
+Launch, Marketing & Accelerator Applications
+
+The full product is already launched and live on the web
+
+Official Product Hunt launch: Tomorrow
+
+Multi-channel marketing rollout across:
+
+Reddit (wellness, ADHD, productivity, accessibility communities)
+
+X/Twitter (AI founders, health-tech, dev communities)
+
+Instagram (Reels showcasing mood & posture AI)
+
+Facebook Groups (wellness, physiotherapy, health support)
+
+Applying to top global accelerators:
+
+Y Combinator
+
+Andreessen Horowitz (a16z)
+
+Fund for the Future and other early-stage AI/health VCs
+
+Positioning RIA as a next-gen agentic wellness AI platform for global adoption
+
 Real-time detection • Agentic AI • Google Calendar Sync • Wellness Automation
 
 🚀 Overview
