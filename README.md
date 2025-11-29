@@ -1,32 +1,5 @@
-RIA – Wellness Aware Agentic AI
+🌿 RIA – Wellness Aware Agentic AI
 Your AI-powered posture, mood & wellness companion.
-
-
-Launch, Marketing & Accelerator Applications
-
-The full product is already launched and live on the web
-
-Official Product Hunt launch: Tomorrow
-
-Multi-channel marketing rollout across:
-
-Reddit (wellness, ADHD, productivity, accessibility communities)
-
-X/Twitter (AI founders, health-tech, dev communities)
-
-Instagram (Reels showcasing mood & posture AI)
-
-Facebook Groups (wellness, physiotherapy, health support)
-
-Applying to top global accelerators:
-
-Y Combinator
-
-Andreessen Horowitz (a16z)
-
-Fund for the Future and other early-stage AI/health VCs
-
-Positioning RIA as a next-gen agentic wellness AI platform for global adoption
 
 Real-time detection • Agentic AI • Google Calendar Sync • Wellness Automation
 
@@ -35,233 +8,138 @@ Real-time detection • Agentic AI • Google Calendar Sync • Wellness Automat
 RIA is an AI-powered wellness companion that analyzes your posture, mood, and daily habits in real time using computer vision and agentic AI.
 It automatically generates personalized routines, manages your calendar, and even prepares doctor appointments using Gemini AI.
 
-This is a fully deployed, production-ready, full-stack application with real-time MediaPipe detection, Firebase backend, and intelligent scheduling.
+This is a fully deployed, production-ready, full-stack application powered by MediaPipe, Firebase, Calendar API, and Gemini AI.
 
 ✨ Key Features
 🎭 Real-Time AI Detection
 
-Mood Recognition using MediaPipe Face Landmarker
-Detects: Happy, Sad, Angry, Neutral, Surprised
-Includes face mesh overlay + expression confidence scores
+Mood Recognition (Happy, Sad, Angry, Neutral, Surprised)
 
-Posture Tracking with Pose Landmarker
+Face mesh overlay + confidence scores
 
-Green skeleton overlay
+Posture Scoring with green skeleton overlay
 
-Detects slouching, forward head posture, shoulder imbalance
-
-Live posture score (0–100)
+Detects slouching, imbalance, forward head posture
 
 🧠 Agentic AI Workflows
 
-Gemini-powered reasoning
+Personalized routines
 
-Personalized routines generated from health profile
+Adaptive tasks based on disability + “Other” custom inputs
 
-Adaptive tasks based on disability/condition (supports “Other”)
+Smart scheduling
 
-AI doctor appointment assistant (prepares booking options)
+AI doctor appointment assistant (user-confirmation based)
 
 📅 Smart Calendar Automation
 
-Google Calendar integration
+Full Google Calendar sync
 
-Pulls all events
+Existing events = Blue
 
-Shows existing events in Blue
+AI-generated tasks = Green
 
-Inserts AI-generated tasks into free slots in Green
+Inserts tasks into free time slots intelligently
 
-🔥 Core App Features
+🔥 App Highlights
 
-Google Sign-In (Firebase Auth)
+Google Sign-In
 
-Personalized onboarding
+Onboarding system
 
-XP + Gamification system
+Gamification (XP + levels)
 
 Leaderboard (with seeded sample users)
 
-AI chat for wellness advice
+AI Wellness Chat
 
-Fully responsive UI (React + Tailwind)
+Fully responsive UI
 
 🏗️ Tech Stack
-Frontend
 
-React 18 + Vite
-
-TypeScript
-
-Tailwind CSS
-
-Framer Motion
-
-Wouter (routing)
-
-AI / Vision
-
-MediaPipe Tasks Vision
-
-TensorFlow.js
-
-face_landmarker.task
-
-pose_landmarker_lite.task
-
-Backend & Infrastructure
-
-Firebase Authentication
-
-Firestore Database
-
-Firebase Storage
-
-Google Calendar API
-
-Gemini AI API
-
-Express Server
-
-Production build with security headers + health checks
+Frontend: React, TypeScript, Vite, Tailwind, Framer Motion
+AI: MediaPipe Tasks Vision, TensorFlow.js
+Backend: Firebase Auth, Firestore, Express
+Integrations: Google Calendar API, Gemini API
 
 📦 Project Structure
-ria-test-1/
-├── client/                   
-│   ├── public/               
+ria/
+├── client/
+│   ├── public/
 │   ├── src/
-│   │   ├── components/       
-│   │   ├── hooks/           
-│   │   │   ├── useFaceDetection.ts    
-│   │   │   └── usePostureDetection.ts 
-│   │   ├── lib/             
-│   │   │   ├── firebase.config.ts     
-│   │   │   └── googleCalendar.ts      
-│   │   ├── pages/           
-│   │   └── App.tsx          
-│   └── index.html
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── lib/
+│   │   ├── pages/
+│   │   └── App.tsx
 ├── server/
-│   └── index-dev.ts
 └── package.json
 
 ⚙️ Environment Setup
 
-Create a .env file:
+.env example:
 
 # Firebase
-VITE_FIREBASE_API_KEY=YOUR_KEY
-VITE_FIREBASE_AUTH_DOMAIN=YOUR_DOMAIN
-VITE_FIREBASE_PROJECT_ID=YOUR_ID
-VITE_FIREBASE_STORAGE_BUCKET=YOUR_BUCKET
-VITE_FIREBASE_MESSAGING_SENDER_ID=YOUR_ID
-VITE_FIREBASE_APP_ID=YOUR_APPID
-VITE_FIREBASE_MEASUREMENT_ID=YOUR_MEASURE_ID
+VITE_FIREBASE_API_KEY=your_key
+VITE_FIREBASE_AUTH_DOMAIN=your_domain
+VITE_FIREBASE_PROJECT_ID=your_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
+VITE_FIREBASE_APP_ID=your_app_id
 
 # Google Calendar
-VITE_GOOGLE_CLIENT_ID=YOUR_CLIENT_ID
+VITE_GOOGLE_CLIENT_ID=your_client_id
 
 # Gemini AI
-VITE_GEMINI_API_KEY=YOUR_GEMINI_KEY
+VITE_GEMINI_API_KEY=your_key
 
-
-The Firebase project is already pre-configured — app runs without .env for testing.
-
-🛠️ Installation & Running Locally
-1️⃣ Clone the repo
-git clone https://github.com/<your-username>/ria.git
-cd ria
-
-2️⃣ Install dependencies
+🛠️ Running Locally
+git clone <repo>
 npm install
-
-3️⃣ Start development server
 npm run dev
 
-
-Access at:
-👉 http://localhost:5000
-
 🏁 Production Deployment
-Build
 npm run build
-
-Start production server
 npm start
 
 
 Includes:
 
-Optimized static file serving
+Security headers
 
-Secure headers
+CORS protection
 
-CORS config
+/api/health endpoint
 
-/api/health monitoring endpoint
+🌍 Launch, Marketing & Accelerator Applications
 
-🧪 MediaPipe Models
+The complete product is already launched publicly on the web
 
-Face Landmarker: 478 landmarks + 52 blendshapes
+Product Hunt launch: Tomorrow to reach global early adopters
 
-Pose Landmarker: 33 body landmarks
+Marketing rollout across:
 
-Runs fully in-browser at 30–60 FPS
+Reddit, X/Twitter, Instagram, Facebook
 
-🎮 How to Use
-Mood Detection
+Applying to top global accelerators:
 
-Dashboard → Mood Detection
+Y Combinator
 
-Start Camera
+a16z (Andreessen Horowitz)
 
-Live emotion detection with mesh overlay
+Other leading AI & health-tech early-stage funds
 
-Posture Detection
-
-Dashboard → Posture Detection
-
-Start Camera
-
-Skeleton overlay + posture score
-
-Tasks & Calendar
-
-Complete onboarding
-
-AI generates tasks
-
-Tasks auto-populate Google Calendar
-
-Leaderboard
-
-Earn XP → Level up → Compete globally
-
-🌍 Launch & Marketing
-
-Fully launched on web
-
-Product Hunt release: Tomorrow
-
-Promotions on: Reddit, X/Twitter, Instagram, Facebook
-
-Applying to a16z + Y Combinator
+Goal: Position RIA as a global Agentic Wellness AI platform
 
 🤝 Contributing
 
-Fork repository
-
-Create a new branch
-
-Commit your changes
-
-Submit a pull request
+Contributions welcome! Submit PRs or issues.
 
 📜 License
 
-MIT License — free to use and modify.
+MIT License.
 
 💬 Contact
 
-For issues, suggestions, or contributions—open an issue or PR on GitHub.
+Open an issue or PR on GitHub.
 
-❤️ Built with passion for accessibility, wellness, and agentic AI.
+❤️ Built for the future of wellness and human-centered AI.
