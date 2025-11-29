@@ -1,290 +1,240 @@
-# RIA - Wellness Aware Agentic AI 🧘‍♀️
+RIA – Wellness Aware Agentic AI
+Your AI-powered posture, mood & wellness companion.
 
-> An AI-powered wellness companion featuring real-time posture detection, mood analysis, and personalized health routines.
+Real-time detection • Agentic AI • Google Calendar Sync • Wellness Automation
 
-![RIA Dashboard](https://img.shields.io/badge/Status-Active-success)
-![React](https://img.shields.io/badge/React-18.3.1-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue)
-![MediaPipe](https://img.shields.io/badge/MediaPipe-Latest-orange)
+🚀 Overview
 
-## ✨ Features
+RIA is an AI-powered wellness companion that analyzes your posture, mood, and daily habits in real time using computer vision and agentic AI.
+It automatically generates personalized routines, manages your calendar, and even prepares doctor appointments using Gemini AI.
 
-### 🎭 Real-Time AI Detection
-- **Mood Detection**: Instant emotion recognition using MediaPipe Face Landmarker
-  - Detects: Happy 😊, Sad 😢, Angry 😠, Neutral 😐, Surprised 😲
-  - Visual face mesh overlay
-  - Live confidence scores and expression breakdown
-  
-- **Posture Analysis**: Real-time body tracking with green skeleton overlay
-  - Detects slouching, uneven shoulders, forward head posture
-  - 0-100 posture scoring system
-  - Instant feedback and corrections
+This is a fully deployed, production-ready, full-stack application with real-time MediaPipe detection, Firebase backend, and intelligent scheduling.
 
-### 🎯 Core Features
-- **User Onboarding**: Personalized health profile setup
-- **XP & Gamification**: Level up by completing wellness tasks
-- **Google Calendar Integration**: Sync routines with your calendar
-- **Firebase Backend**: Secure authentication and data storage
-- **Leaderboard**: Compete with other users
-- **AI Chat**: Wellness guidance and support
+✨ Key Features
+🎭 Real-Time AI Detection
 
-## 🚀 Quick Start
+Mood Recognition using MediaPipe Face Landmarker
+Detects: Happy, Sad, Angry, Neutral, Surprised
+Includes face mesh overlay + expression confidence scores
 
-### Prerequisites
-- Node.js 18+ and npm
-- Firebase account
-- Google Cloud account (for Calendar API)
+Posture Tracking with Pose Landmarker
 
-### Installation
+Green skeleton overlay
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/piyushxt43/ria-test-1.git
-cd ria-test-1
-```
+Detects slouching, forward head posture, shoulder imbalance
 
-2. **Install dependencies**
-```bash
-npm install
-```
+Live posture score (0–100)
 
-3. **Set up environment variables**
+🧠 Agentic AI Workflows
 
-Create a `.env` file in the root directory:
-```env
-# Firebase Configuration
-VITE_FIREBASE_API_KEY=AIzaSyAPivtbnPyUM0CZWJ2QGIr_9JnNM_-87G8
-VITE_FIREBASE_AUTH_DOMAIN=ria-new.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=ria-new
-VITE_FIREBASE_STORAGE_BUCKET=ria-new.firebasestorage.app
-VITE_FIREBASE_MESSAGING_SENDER_ID=64303120014
-VITE_FIREBASE_APP_ID=1:64303120014:web:7a724156580dbe5c1f13df
-VITE_FIREBASE_MEASUREMENT_ID=G-1SHJ6T2VST
+Gemini-powered reasoning
 
-# Google Calendar API
-VITE_GOOGLE_CLIENT_ID=734179532245-n3fmch2r1848q63c133phc6de2kfnta9.apps.googleusercontent.com
+Personalized routines generated from health profile
 
-# Gemini AI API
-VITE_GEMINI_API_KEY=AIzaSyDuJ3PYOuvtl8e3VuA3FPuNreDgrifqGZo
-```
+Adaptive tasks based on disability/condition (supports “Other”)
 
-**Note:** The Firebase configuration is already set as defaults in the code, so the app will work even without a `.env` file.
+AI doctor appointment assistant (prepares booking options)
 
-4. **Run the development server**
-```bash
-npm run dev
-```
+📅 Smart Calendar Automation
 
-The app will be available at `http://localhost:5000`
+Google Calendar integration
 
-## 📦 Tech Stack
+Pulls all events
 
-### Frontend
-- **React 18.3.1** - UI framework
-- **TypeScript 5.6.3** - Type safety
-- **Vite 5.4.20** - Build tool
-- **Tailwind CSS 3.4.17** - Styling
-- **Framer Motion 11.13.1** - Animations
-- **Wouter 3.3.5** - Routing
+Shows existing events in Blue
 
-### AI & Detection
-- **MediaPipe Tasks Vision** - Real-time face and pose detection
-  - Face Landmarker for emotion recognition
-  - Pose Landmarker for posture analysis
-- **TensorFlow.js 4.22.0** - ML infrastructure
-- **@mediapipe/tasks-vision** - Vision tasks
+Inserts AI-generated tasks into free slots in Green
 
-### Backend & Services
-- **Firebase 12.6.0** - Authentication, Firestore, Analytics
-- **Google APIs** - Calendar integration
-- **Express 4.21.2** - Server
+🔥 Core App Features
 
-### UI Components
-- **Radix UI** - Accessible component primitives
-- **Lucide React** - Icons
-- **React Hook Form** - Form management
+Google Sign-In (Firebase Auth)
 
-## 🏗️ Project Structure
+Personalized onboarding
 
-```
+XP + Gamification system
+
+Leaderboard (with seeded sample users)
+
+AI chat for wellness advice
+
+Fully responsive UI (React + Tailwind)
+
+🏗️ Tech Stack
+Frontend
+
+React 18 + Vite
+
+TypeScript
+
+Tailwind CSS
+
+Framer Motion
+
+Wouter (routing)
+
+AI / Vision
+
+MediaPipe Tasks Vision
+
+TensorFlow.js
+
+face_landmarker.task
+
+pose_landmarker_lite.task
+
+Backend & Infrastructure
+
+Firebase Authentication
+
+Firestore Database
+
+Firebase Storage
+
+Google Calendar API
+
+Gemini AI API
+
+Express Server
+
+Production build with security headers + health checks
+
+📦 Project Structure
 ria-test-1/
-├── client/                    # Frontend application
-│   ├── public/
-│   │   ├── logoria.gif       # App logo
-│   │   └── mainbg1.png       # Background assets
+├── client/                   
+│   ├── public/               
 │   ├── src/
-│   │   ├── components/       # React components
-│   │   │   ├── ui/          # UI primitives
-│   │   │   ├── UnifiedHeader.tsx
-│   │   │   ├── UserOnboarding.tsx
-│   │   │   ├── RiaChat.tsx
-│   │   │   └── ...
-│   │   ├── hooks/           # Custom React hooks
-│   │   │   ├── useFaceDetection.ts    # MediaPipe face detection
-│   │   │   └── usePostureDetection.ts # MediaPipe pose detection
-│   │   ├── lib/             # Utilities and configs
-│   │   │   ├── firebase.config.ts     # Firebase setup
-│   │   │   └── googleCalendar.ts      # Calendar integration
-│   │   ├── pages/           # Route pages
-│   │   │   ├── Dashboard.tsx
-│   │   │   ├── Home.tsx
-│   │   │   ├── Leaderboard.tsx
-│   │   │   └── ...
-│   │   └── App.tsx          # Main app component
+│   │   ├── components/       
+│   │   ├── hooks/           
+│   │   │   ├── useFaceDetection.ts    
+│   │   │   └── usePostureDetection.ts 
+│   │   ├── lib/             
+│   │   │   ├── firebase.config.ts     
+│   │   │   └── googleCalendar.ts      
+│   │   ├── pages/           
+│   │   └── App.tsx          
 │   └── index.html
-├── server/                   # Backend server
+├── server/
 │   └── index-dev.ts
-├── package.json
-└── README.md
-```
+└── package.json
 
-## 🎮 Usage
+⚙️ Environment Setup
 
-### Dashboard
-1. Sign in with Google
-2. Complete onboarding (age, height, weight, health info, goals)
-3. Navigate to Dashboard
+Create a .env file:
 
-### Mood Detection
-1. Click "Mood Detection" tab
-2. Click "Start Camera"
-3. See instant emotion recognition with face mesh overlay
-4. View live results on the right panel
+# Firebase
+VITE_FIREBASE_API_KEY=YOUR_KEY
+VITE_FIREBASE_AUTH_DOMAIN=YOUR_DOMAIN
+VITE_FIREBASE_PROJECT_ID=YOUR_ID
+VITE_FIREBASE_STORAGE_BUCKET=YOUR_BUCKET
+VITE_FIREBASE_MESSAGING_SENDER_ID=YOUR_ID
+VITE_FIREBASE_APP_ID=YOUR_APPID
+VITE_FIREBASE_MEASUREMENT_ID=YOUR_MEASURE_ID
 
-### Posture Detection
-1. Click "Posture Detection" tab
-2. Click "Start Camera"
-3. See green skeleton tracking your body
-4. Get real-time posture feedback and scoring
+# Google Calendar
+VITE_GOOGLE_CLIENT_ID=YOUR_CLIENT_ID
 
-### Tasks & Gamification
-1. View daily tasks in "Tasks" tab
-2. Complete tasks to earn XP
-3. Level up and climb the leaderboard
+# Gemini AI
+VITE_GEMINI_API_KEY=YOUR_GEMINI_KEY
 
-## 🔧 Configuration
 
-All required API keys and IDs are already configured in the code. The app uses:
+The Firebase project is already pre-configured — app runs without .env for testing.
 
-- **Firebase**: Pre-configured with project `ria-new`
-- **Google Calendar**: Client ID `734179532245-n3fmch2r1848q63c133phc6de2kfnta9.apps.googleusercontent.com`
-- **Gemini AI**: API Key `AIzaSyDuJ3PYOuvtl8e3VuA3FPuNreDgrifqGZo`
+🛠️ Installation & Running Locally
+1️⃣ Clone the repo
+git clone https://github.com/<your-username>/ria.git
+cd ria
 
-No additional setup is required - the app works out of the box!
-
-## 🌐 Deployment
-
-### Production Build
-
-1. **Build for production**
-   ```bash
-   npm run build
-   ```
-   This will:
-   - Build the React frontend to `dist/public`
-   - Bundle the Express server to `dist/index.js`
-
-3. **Start production server**
-   ```bash
-   npm start
-   ```
-   The server will serve both the API and static files on the port specified in `PORT` (default: 5000).
-
-### Production Features
-
-- ✅ **Security Headers**: XSS protection, content type options, frame options
-- ✅ **CORS Configuration**: Configurable allowed origins
-- ✅ **Health Check Endpoint**: `/api/health` for monitoring
-- ✅ **Error Handling**: Production-safe error messages
-- ✅ **Static File Caching**: Optimized cache headers for assets
-- ✅ **Environment-based Configuration**: Secure environment variable management
-
-### Deployment Platforms
-
-#### Vercel / Netlify
-For frontend-only deployment, build the client and deploy `dist/public`:
-```bash
-npm run build
-# Deploy dist/public directory
-```
-
-#### Railway / Render / Fly.io
-Deploy the full-stack application:
-```bash
+2️⃣ Install dependencies
 npm install
+
+3️⃣ Start development server
+npm run dev
+
+
+Access at:
+👉 http://localhost:5000
+
+🏁 Production Deployment
+Build
 npm run build
+
+Start production server
 npm start
-```
 
-#### Docker (Optional)
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY . .
-RUN npm run build
-EXPOSE 5000
-CMD ["npm", "start"]
-```
 
-### Health Check
+Includes:
 
-Monitor your production deployment:
-```bash
-curl https://your-domain.com/api/health
-```
+Optimized static file serving
 
-Response:
-```json
-{
-  "status": "ok",
-  "timestamp": "2024-01-01T00:00:00.000Z",
-  "uptime": 3600,
-  "environment": "production"
-}
-```
+Secure headers
 
-## 📊 MediaPipe Models
+CORS config
 
-The app uses Google's MediaPipe for instant AI detection:
+/api/health monitoring endpoint
 
-- **Face Landmarker**: Detects 478 facial landmarks and 52 blendshapes
-  - Model: `face_landmarker.task` (~3MB)
-  - Loaded from CDN: No downloads needed
-  
-- **Pose Landmarker**: Tracks 33 body landmarks
-  - Model: `pose_landmarker_lite.task` (~5MB)
-  - Loaded from CDN: No downloads needed
+🧪 MediaPipe Models
 
-Both models load in <1 second and run at 30-60 FPS on modern devices.
+Face Landmarker: 478 landmarks + 52 blendshapes
 
-## 🤝 Contributing
+Pose Landmarker: 33 body landmarks
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Runs fully in-browser at 30–60 FPS
 
-## 📝 License
+🎮 How to Use
+Mood Detection
 
-This project is licensed under the MIT License.
+Dashboard → Mood Detection
 
-## 🙏 Acknowledgments
+Start Camera
 
-- **MediaPipe** by Google for real-time ML models
-- **Firebase** for backend infrastructure
-- **Radix UI** for accessible components
-- **Tailwind CSS** for styling system
+Live emotion detection with mesh overlay
 
-## 📧 Contact
+Posture Detection
 
-For questions or support, please open an issue on GitHub.
+Dashboard → Posture Detection
 
----
+Start Camera
 
-Made with ❤️ for wellness and health
-#   r i a - m u m b a i - h a c k s z z 
- 
- 
+Skeleton overlay + posture score
+
+Tasks & Calendar
+
+Complete onboarding
+
+AI generates tasks
+
+Tasks auto-populate Google Calendar
+
+Leaderboard
+
+Earn XP → Level up → Compete globally
+
+🌍 Launch & Marketing
+
+Fully launched on web
+
+Product Hunt release: Tomorrow
+
+Promotions on: Reddit, X/Twitter, Instagram, Facebook
+
+Applying to a16z + Y Combinator
+
+🤝 Contributing
+
+Fork repository
+
+Create a new branch
+
+Commit your changes
+
+Submit a pull request
+
+📜 License
+
+MIT License — free to use and modify.
+
+💬 Contact
+
+For issues, suggestions, or contributions—open an issue or PR on GitHub.
+
+❤️ Built with passion for accessibility, wellness, and agentic AI.
